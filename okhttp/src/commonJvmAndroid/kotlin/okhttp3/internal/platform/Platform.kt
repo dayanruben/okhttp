@@ -28,6 +28,7 @@ import javax.net.SocketFactory
 import javax.net.ssl.ExtendedSSLSession
 import javax.net.ssl.SNIHostName
 import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLException
 import javax.net.ssl.SSLSocket
 import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
@@ -36,6 +37,7 @@ import javax.net.ssl.X509TrustManager
 import okhttp3.Dns
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
+import okhttp3.internal.dns.EchRetryConfig
 import okhttp3.internal.publicsuffix.PublicSuffixDatabase
 import okhttp3.internal.readFieldOrNull
 import okhttp3.internal.tls.BasicCertificateChainCleaner
@@ -130,6 +132,9 @@ open class Platform {
     echConfigList: ByteString?,
   ) {
   }
+
+  /** Returns the ECH retry configuration carried by [exception]. */
+  internal open fun getEchRetryConfig(exception: SSLException): EchRetryConfig? = null
 
   /** Called after the TLS handshake to release resources allocated by [configureTlsExtensions]. */
   open fun afterHandshake(sslSocket: SSLSocket) {

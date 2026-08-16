@@ -45,7 +45,7 @@ val client = OkHttpClient.Builder()
   .build()
 ```
 
- *  New: OkHttp artifacts is now signed with our [new signing key]. This project and three sibling
+ *  New: OkHttp artifacts are now signed with our [new signing key]. This project and three sibling
     projects ([Retrofit], [Okio], and [SQLDelight]) recently joined [the Commonhaus Foundation].
  *  Fix: MockWebServer’s `@StartStop` annotation now supports `@Nested` JUnit 5 tests.
  *  Fix: Our default TLS hostname verifier now reject hosts that fail IP canonicalization.

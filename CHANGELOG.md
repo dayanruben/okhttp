@@ -36,7 +36,7 @@ val client = bootstrapClient.newBuilder()
 ```
 
 You could also opt in with our new `AndroidDns` API. Unfortunately, the privacy benefits of ECH are
-deficient because its DNS queries are not encrypted by default.
+thwarted because its DNS queries are not encrypted by default.
 
 ```kotlin
 // AndroidDns fetches the HTTPS DNS resource records necessary for ECH.
@@ -224,8 +224,8 @@ migrate.)
 | com.squareup.okhttp3:mockwebserver3-junit5:5.0.0 | mockwebserver3.junit5 | Optional JUnit 5 integration.     |
 | com.squareup.okhttp3:mockwebserver:5.0.0         | okhttp3.mockwebserver | Obsolete. Depends on JUnit 4.     |
 
-**OkHttp now supports Happy Eyeballs ([RFC 8305][rfc_8305]) for IPv4+IPv6 networks.** It attempts
-both IPv6 and IPv4 connections concurrently, keeping whichever connects first.
+**OkHttp now supports Happy Eyeballs ([RFC 8305]) for IPv4+IPv6 networks.** It attempts both IPv6
+and IPv4 connections concurrently, keeping whichever connects first.
 
 **We’ve improved our Kotlin APIs.** You can skip the builder:
 
@@ -834,6 +834,8 @@ See [4.x Change log](https://lysine.dev/okhttp/changelogs/changelog_4x/) for the
 [JPMS]: https://openjdk.org/projects/jigsaw/spec/
 [Ktor]: https://ktor.io/
 [Okio]: https://lysine.dev/okio/
+[RFC 1008]: https://www.rfc-editor.org/info/rfc10008/
+[RFC 8305]: https://www.rfc-editor.org/info/rfc8305/
 [Retrofit]: https://lysine.dev/retrofit/
 [SQLDelight]: https://sqldelight.github.io/sqldelight/
 [ZSTD-KMP]: https://github.com/square/zstd-kmp
@@ -878,8 +880,6 @@ See [4.x Change log](https://lysine.dev/okhttp/changelogs/changelog_4x/) for the
 [okio_3_2_0]: https://lysine.dev/okio/changelog/#version-320
 [okio_3_7_0]: https://lysine.dev/okio/changelog/#version-370
 [okio_3_9_0]: https://lysine.dev/okio/changelog/#version-390
-[rfc_8305]: https://www.rfc-editor.org/info/rfc8305/
-[rfc_10008]: https://www.rfc-editor.org/info/rfc10008/
 [startup_1_2_0]: https://developer.android.com/jetpack/androidx/releases/startup#1.2.0
 [the Commonhaus Foundation]: https://www.commonhaus.org/activity/315.html
 [uts46]: https://www.unicode.org/reports/tr46
